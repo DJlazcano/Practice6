@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Practice5_Model.Models
 {
-    public class Inventory
-    {
-        [Key]
-        public int Inventory_Id { get; set; }
-        public int Stock { get; set; }
+	public class Inventory
+	{
+		[Key]
+		public int Inventory_Id { get; set; }
+		public int Stock { get; set; }
 
-        [ForeignKey("Product")]
-        public int Product_Id { get; set; }
-        public Product Product { get; set; }
-    }
+		[ForeignKey("Product")]
+		public int Product_Id { get; set; }
+		public Product Product { get; set; }
+	}
 }

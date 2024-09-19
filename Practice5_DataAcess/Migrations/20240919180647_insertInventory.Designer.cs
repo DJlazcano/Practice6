@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Practice5_DataAccess.Data;
 
@@ -11,9 +12,11 @@ using Practice5_DataAccess.Data;
 namespace Practice5_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240919180647_insertInventory")]
+    partial class insertInventory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,8 +41,7 @@ namespace Practice5_DataAccess.Migrations
 
                     b.HasKey("Inventory_Id");
 
-                    b.HasIndex("Product_Id")
-                        .IsUnique();
+                    b.HasIndex("Product_Id");
 
                     b.ToTable("Inventories");
 
@@ -47,56 +49,62 @@ namespace Practice5_DataAccess.Migrations
                         new
                         {
                             Inventory_Id = 1,
-                            Product_Id = 1,
+                            Product_Id = 10,
                             Stock = 100
                         },
                         new
                         {
                             Inventory_Id = 2,
-                            Product_Id = 2,
+                            Product_Id = 9,
                             Stock = 200
                         },
                         new
                         {
                             Inventory_Id = 3,
-                            Product_Id = 3,
+                            Product_Id = 8,
                             Stock = 30
                         },
                         new
                         {
                             Inventory_Id = 4,
-                            Product_Id = 4,
+                            Product_Id = 7,
                             Stock = 234
                         },
                         new
                         {
                             Inventory_Id = 5,
-                            Product_Id = 5,
+                            Product_Id = 6,
                             Stock = 531
                         },
                         new
                         {
                             Inventory_Id = 6,
-                            Product_Id = 6,
+                            Product_Id = 5,
                             Stock = 345
                         },
                         new
                         {
                             Inventory_Id = 7,
-                            Product_Id = 7,
+                            Product_Id = 4,
                             Stock = 322
                         },
                         new
                         {
                             Inventory_Id = 8,
-                            Product_Id = 8,
+                            Product_Id = 2,
                             Stock = 345
                         },
                         new
                         {
                             Inventory_Id = 9,
-                            Product_Id = 9,
+                            Product_Id = 3,
                             Stock = 232
+                        },
+                        new
+                        {
+                            Inventory_Id = 10,
+                            Product_Id = 1,
+                            Stock = 40
                         });
                 });
 
@@ -470,8 +478,8 @@ namespace Practice5_DataAccess.Migrations
             modelBuilder.Entity("Practice5_Model.Models.Inventory", b =>
                 {
                     b.HasOne("Practice5_Model.Models.Product", "Product")
-                        .WithOne("Inventory")
-                        .HasForeignKey("Practice5_Model.Models.Inventory", "Product_Id")
+                        .WithMany()
+                        .HasForeignKey("Product_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -502,9 +510,6 @@ namespace Practice5_DataAccess.Migrations
 
             modelBuilder.Entity("Practice5_Model.Models.Product", b =>
                 {
-                    b.Navigation("Inventory")
-                        .IsRequired();
-
                     b.Navigation("Purchases");
 
                     b.Navigation("Sales");

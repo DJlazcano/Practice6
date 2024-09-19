@@ -22,5 +22,7 @@ namespace Practice5_Model.Models
 
 		public ICollection<Sale> Sales { get; set; }
 		public ICollection<Purchase> Purchases { get; set; }
-	}
+
+        public Inventory Inventory { get; set; }
+    }
 }

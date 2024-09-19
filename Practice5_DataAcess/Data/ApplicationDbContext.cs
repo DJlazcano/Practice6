@@ -17,14 +17,19 @@ namespace Practice5_DataAccess.Data
 		public DbSet<Purchase> Purchases { get; set; }
 		public DbSet<Inventory> Inventories { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			//optionsBuilder.UseSqlServer("Server=USQROJLAZCANOA1;Database=Practice5;TrustServerCertificate=True;Trusted_Connection=True;");
-		}
-
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
 		{
 		}
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlServer("Server=USQROJLAZCANOA1;Database=Practice5;TrustServerCertificate=True;Trusted_Connection=True;");
+			}
+		}
+
+
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -35,6 +40,12 @@ namespace Practice5_DataAccess.Data
 			modelBuilder.Entity<Purchase>()
 				.HasIndex(p => p.Product_Id)
 				.IsUnique(false);
+
+			modelBuilder.Entity<Inventory>()
+					.HasOne(i => i.Product)
+					.WithOne(p => p.Inventory)
+					.HasForeignKey<Inventory>(i => i.Product_Id)
+					.OnDelete(DeleteBehavior.Cascade);
 
 			modelBuilder.Entity<Sale>()
 						.HasOne(s => s.Product)
@@ -93,19 +104,21 @@ namespace Practice5_DataAccess.Data
 
 			modelBuilder.Entity<Purchase>().HasData(purchaseList);
 
-			var inventoryList = new Inventory[] {
-					new Inventory{Inventory_Id = 1, Stock = 100, Product_Id = 10},
-					new Inventory{Inventory_Id = 2, Stock = 200, Product_Id = 9},
-					new Inventory{Inventory_Id = 3, Stock = 30, Product_Id = 8},
-					new Inventory{Inventory_Id = 4, Stock = 234, Product_Id = 7},
-					new Inventory{Inventory_Id = 5, Stock = 531, Product_Id = 6},
-					new Inventory{Inventory_Id = 6, Stock = 345, Product_Id = 5},
-					new Inventory{Inventory_Id = 7, Stock = 322, Product_Id = 4},
-					new Inventory{Inventory_Id = 8, Stock = 345, Product_Id = 2},
-					new Inventory{Inventory_Id = 9, Stock = 232, Product_Id = 3},
-					new Inventory{Inventory_Id = 10, Stock = 40, Product_Id = 1}
+			var inventoryList = new Inventory[]
+			{
+				new Inventory{Inventory_Id = 1, Stock = 100, Product_Id = 1},
+				new Inventory{Inventory_Id = 2, Stock = 200, Product_Id = 2},
+				new Inventory{Inventory_Id = 3, Stock = 30, Product_Id = 3},
+				new Inventory{Inventory_Id = 4, Stock = 234, Product_Id = 4},
+				new Inventory{Inventory_Id = 5, Stock = 531, Product_Id = 5},
+				new Inventory{Inventory_Id = 6, Stock = 345, Product_Id = 6},
+				new Inventory{Inventory_Id = 7, Stock = 322, Product_Id = 7},
+				new Inventory{Inventory_Id = 8, Stock = 345, Product_Id = 8},
+				new Inventory{Inventory_Id = 9, Stock = 232, Product_Id = 9},
+				new Inventory{Inventory_Id = 10, Stock = 40, Product_Id = 10}
 			};
 			modelBuilder.Entity<Inventory>().HasData(inventoryList);
+
 		}
 	}
 }
