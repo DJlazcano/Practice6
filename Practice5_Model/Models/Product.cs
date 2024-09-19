@@ -11,7 +11,9 @@ namespace Practice5_Model.Models
 	{
 		[Key]
 		public int Product_Id { get; set; }
-		public string ProductName { get; set; }
+
+        [Required(ErrorMessage = "Product Name is required")]
+        public string ProductName { get; set; }
         public string Description { get; set; }
 
         public double Price { get; set; }
