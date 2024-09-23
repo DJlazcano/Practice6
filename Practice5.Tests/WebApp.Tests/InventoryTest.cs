@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
 
-namespace Practice5.Tests.ProductTests
+namespace Practice5.Tests.WebApp.Tests
 {
 	public class InventoryFixture
 	{
@@ -99,6 +99,7 @@ namespace Practice5.Tests.ProductTests
 			Assert.Equal("Index", redirectToActionResult.ActionName);
 		}
 
+		[Fact]
 		public async Task Upsert_Delete_ReturnsRedirectToActionResult()
 		{
 
@@ -107,7 +108,7 @@ namespace Practice5.Tests.ProductTests
 				new Inventory {Inventory_Id =2, Product_Id = 2, Stock = 100}
 			}.AsQueryable();
 
-			_inventoryFixture.MockDbContext.Setup(db => db.Products).Returns((Microsoft.EntityFrameworkCore.DbSet<Product>)inventories);
+			_inventoryFixture.MockDbContext.Setup(db => db.Inventories).Returns((Microsoft.EntityFrameworkCore.DbSet<Inventory>)inventories);
 
 			var result = _inventoryFixture.InventoryController.Delete(1);
 			var viewResult = Assert.IsType<ViewResult>(result);
@@ -117,4 +118,3 @@ namespace Practice5.Tests.ProductTests
 		}
 	}
 }
-}}

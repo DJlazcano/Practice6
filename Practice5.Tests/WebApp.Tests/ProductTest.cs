@@ -5,7 +5,7 @@ using Practice5_Model.Models;
 using Practice5_WebApp.Controllers;
 using Xunit.Abstractions;
 
-namespace Practice5.Tests.ProductTests
+namespace Practice5.Tests.WebApp.Tests
 {
 	public class ProductFixture
 	{
@@ -93,6 +93,7 @@ namespace Practice5.Tests.ProductTests
 			Assert.Equal("Index", redirectToActionResult.ActionName);
 		}
 
+		[Fact]
 		public async Task Upsert_Delete_ReturnsRedirectToActionResult()
 		{
 
