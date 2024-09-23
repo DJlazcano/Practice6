@@ -1,0 +1,726 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A13177E4-F7B0-48F1-9F83-1FC178753F04}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Practice6</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="Practice5\Practice5.csproj.user" />
+    <Content Include="Practice5_DataAcess\bin\Debug\net8.0\Practice5_DataAccess.dll" />
+    <Content Include="Practice5_DataAcess\bin\Debug\net8.0\Practice5_DataAccess.pdb" />
+    <Content Include="Practice5_DataAcess\bin\Debug\net8.0\Practice5_Model.dll" />
+    <Content Include="Practice5_DataAcess\bin\Debug\net8.0\Practice5_Model.pdb" />
+    <Content Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.csproj.FileListAbsolute.txt" />
+    <Content Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.dll" />
+    <Content Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.pdb" />
+    <Content Include="Practice5_DataAcess\obj\Debug\net8.0\refint\Practice5_DataAccess.dll" />
+    <Content Include="Practice5_DataAcess\obj\Debug\net8.0\ref\Practice5_DataAccess.dll" />
+    <Content Include="Practice5_Model\bin\Debug\net8.0\Practice5_Model.dll" />
+    <Content Include="Practice5_Model\bin\Debug\net8.0\Practice5_Model.pdb" />
+    <Content Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.csproj.FileListAbsolute.txt" />
+    <Content Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.dll" />
+    <Content Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.pdb" />
+    <Content Include="Practice5_Model\obj\Debug\net8.0\refint\Practice5_Model.dll" />
+    <Content Include="Practice5_Model\obj\Debug\net8.0\ref\Practice5_Model.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Azure.Core.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Azure.Identity.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Humanizer.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Build.Locator.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Identity.Client.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Mono.TextTemplating.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_DataAccess.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_DataAccess.pdb" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_Model.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_Model.pdb" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_WebApp.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_WebApp.exe" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_WebApp.pdb" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.ClientModel.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.CodeDom.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Composition.AttributedModel.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Composition.Convention.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Composition.Hosting.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Composition.Runtime.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Composition.TypedParts.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.IO.Pipelines.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Memory.Data.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Runtime.Caching.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Text.Encodings.Web.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\System.Text.Json.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll" />
+    <Content Include="Practice5_WebApp\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\apphost.exe" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.csproj.FileListAbsolute.txt" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.dll" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.pdb" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\refint\Practice5_WebApp.dll" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\ref\Practice5_WebApp.dll" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\scopedcss\bundle\Practice5_WebApp.styles.css" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\scopedcss\projectbundle\Practice5_WebApp.bundle.scp.css" />
+    <Content Include="Practice5_WebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css" />
+    <Content Include="Practice5_WebApp\Practice5_WebApp.csproj.user" />
+    <Content Include="Practice5_WebApp\Views\Shared\_Layout.cshtml.css" />
+    <Content Include="Practice5_WebApp\wwwroot\css\site.css" />
+    <Content Include="Practice5_WebApp\wwwroot\favicon.ico" />
+    <Content Include="Practice5_WebApp\wwwroot\js\site.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery\dist\jquery.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery\dist\jquery.min.js" />
+    <Content Include="Practice5_WebApp\wwwroot\lib\jquery\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\FETCH_HEAD" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\push-to-checkout.sample" />
+    <None Include=".git\hooks\sendemail-validate.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\objects\00\9306070a81c2db13112c4e7d5e5daa01b46f61" />
+    <None Include=".git\objects\02\ae65b5fe5d12c881eb054006f68b52a2818615" />
+    <None Include=".git\objects\05\1dd7c01db8d512aa758954970e92d9291bde1e" />
+    <None Include=".git\objects\05\7cc38732f7a5862d9ab625171a894d39ab1446" />
+    <None Include=".git\objects\05\e7fd91fe1cc49457f2b6ec829d0fd6ba20b9cb" />
+    <None Include=".git\objects\06\79f093dc49a1d17e083ec384ae377ab5dfc88d" />
+    <None Include=".git\objects\09\376573536e4d6e7f86413c56c62b83131f45bc" />
+    <None Include=".git\objects\09\8c99b8736a7ab92a7ac42e2a70e0831e5f97e0" />
+    <None Include=".git\objects\0a\02930ecc93bca5919fbaa6573e666f48ddb941" />
+    <None Include=".git\objects\0a\1fa99aceaae4953049ef57730fb50cb4a6d4b6" />
+    <None Include=".git\objects\0a\ba046073cc8d74b110691ad68f9a54c074f92c" />
+    <None Include=".git\objects\0b\590a19dcf6b492ccc80ffe005fe1ba4a268892" />
+    <None Include=".git\objects\0c\208ae9181e5e5717e47ec1bd59368aebc6066e" />
+    <None Include=".git\objects\0e\03ac0972c053482fc9b5d55016fbfdd372d987" />
+    <None Include=".git\objects\10\8b76c90656a3b47afa9d67b7660313b3d5554a" />
+    <None Include=".git\objects\14\8781e14c8859eca7cf1f361dd0e0a23395341a" />
+    <None Include=".git\objects\14\fb499f42b0db2ba7cac683e7c451a9ef838cf7" />
+    <None Include=".git\objects\15\ea9e7dbad26f8dc3973df31d21985304997d92" />
+    <None Include=".git\objects\16\274d3b5c4c82c92108e13c84715cd9ca5d55e4" />
+    <None Include=".git\objects\16\644bfa83640d2e4c5b5dc990324e4f32e84d1f" />
+    <None Include=".git\objects\18\7048eb120f6725e46bb4a414a37e3951f0ebf6" />
+    <None Include=".git\objects\19\ddd7ede2fa9daf38992378e1d41be28f593ccb" />
+    <None Include=".git\objects\1a\f7de150c99c12dd67a509fe57c10d63e4eeb04" />
+    <None Include=".git\objects\1e\397dadd33004094deeb60ccbedb1267d332b6d" />
+    <None Include=".git\objects\1f\ced998a9a8a31e2db043cdd6bc2188d0584340" />
+    <None Include=".git\objects\1f\f0c423042b46cb1d617b81efb715defbe8054d" />
+    <None Include=".git\objects\22\868baa7983ecd63e2d6ad6f89c97058b004b15" />
+    <None Include=".git\objects\25\61babfebed3ba522829367cd05dedf4e2e9a63" />
+    <None Include=".git\objects\28\7d267aec387510f2943630caefb166694d30b4" />
+    <None Include=".git\objects\29\4bb43a38529adb8192415c2097916b84fec7af" />
+    <None Include=".git\objects\2b\5d3229568f700f2016855a0ad78e169d8023da" />
+    <None Include=".git\objects\2c\44b59685d1c156f2baf56d05f6a5bd72e680db" />
+    <None Include=".git\objects\2e\3777c36c5c96ff5dda434ad7db1ce937c183fa" />
+    <None Include=".git\objects\2f\7a71ce582e71e47e9826f2089544239b85378e" />
+    <None Include=".git\objects\30\8ba69112336f1a2d9a4f00c49e9b0111668b29" />
+    <None Include=".git\objects\31\6035986a8ed31dbfd867f2be6ceade21dc8703" />
+    <None Include=".git\objects\31\b8913689a64415910aab1f998a869746a47491" />
+    <None Include=".git\objects\33\f5c3b2633f4c2ea0380cf718da3b9b9ffdf435" />
+    <None Include=".git\objects\35\eb0694480ba4ec267dfc7da0357fe9aaf7be9b" />
+    <None Include=".git\objects\38\9734cadc38ca191092fe69519da31ba087f13a" />
+    <None Include=".git\objects\3a\8e8c19aa93b68ed9fedfd4304ef792eeab87c6" />
+    <None Include=".git\objects\3a\d8dfe02514e868ac8b897839fab561d477d3c6" />
+    <None Include=".git\objects\3c\339b5fb84ec31312036d3b19e07e1b423bfd2f" />
+    <None Include=".git\objects\3c\cd899ab515d610a2b381e4ee7292c2534766b4" />
+    <None Include=".git\objects\3f\ced52cb70231917950318314fcd48096f561a3" />
+    <None Include=".git\objects\40\bd0519cf3c7c7b4b03126020761e9b20cd1306" />
+    <None Include=".git\objects\43\0a001fbb667ee439f1af51b86ec5ad2398e3c0" />
+    <None Include=".git\objects\44\2a41317af971c9b043248f763ec1bd6cd73855" />
+    <None Include=".git\objects\47\01edce9a8a98b4339954277ff5e80e12f2f1a6" />
+    <None Include=".git\objects\47\78261a0a9879fc0005a313a847b748237a4118" />
+    <None Include=".git\objects\4d\9024b992fef384587f3e4f3646ac994c51d189" />
+    <None Include=".git\objects\4e\88a3346330acc3833576ecfa5fd6637e6bdfce" />
+    <None Include=".git\objects\4f\10c17ff0547b407e3e1f5d4898634aa27deadf" />
+    <None Include=".git\objects\4f\4ed7ce97b11fe2e1a39bcb17e99a874ff5271b" />
+    <None Include=".git\objects\4f\745dedae03f675dc6f6d21147f4f47732cb84d" />
+    <None Include=".git\objects\4f\8112261b66bb42ce5d7f206f8ccb847f9abb04" />
+    <None Include=".git\objects\4f\863f4ad4bd876446c7056a83984b57365beab3" />
+    <None Include=".git\objects\52\fc4e2caa5bda23a5f07f7abc0a1823a612aa7e" />
+    <None Include=".git\objects\53\0a48a60a3b7d2f59ae33f97ee51a350b8a5283" />
+    <None Include=".git\objects\59\35c27ad47a5f36c7de192dfba8e13a7a77ff0c" />
+    <None Include=".git\objects\59\9bdf2c721396853b5afae210081dc776985f65" />
+    <None Include=".git\objects\5a\16d80a9aa78592ddc961b1d48b549024a3dbbf" />
+    <None Include=".git\objects\5a\5c9cd1308a0a104c11e7d9362dadc501c66f50" />
+    <None Include=".git\objects\5d\fb0cd629c93e4079bf77e826d56ded8c7315fc" />
+    <None Include=".git\objects\61\e00c95cc39a964317e6cf8e346d6883a2860a4" />
+    <None Include=".git\objects\63\1f1ec3f92a6d944aca47e7ad526cbb641e3525" />
+    <None Include=".git\objects\63\951e8a1389bbff63829bafbc14ab234730f47a" />
+    <None Include=".git\objects\63\e859b476eff5055e0e557aaa151ca8223fbeef" />
+    <None Include=".git\objects\64\50d703dd8b9e8ba3fb030e2e9e3ddfffe0467b" />
+    <None Include=".git\objects\65\9e6035cce1e5055751dc881d1f77e277e973c1" />
+    <None Include=".git\objects\66\3fdb88b634bf256fd820fe8b7cf98333c3af21" />
+    <None Include=".git\objects\66\cf6a357879d226db156fd8c6ed6a0dacb0cfee" />
+    <None Include=".git\objects\67\c1fc27059fb186b261f53b8290e8533a79c894" />
+    <None Include=".git\objects\68\401faf0f09977e537dbd370d80014155834131" />
+    <None Include=".git\objects\69\cea4c4250193f081cdbac81ffb05a64d7bf328" />
+    <None Include=".git\objects\6b\89c0fc318311ee54b54dba50748abcba63688d" />
+    <None Include=".git\objects\71\5f7359cfe34698d703d1126a990102351debae" />
+    <None Include=".git\objects\72\9e577b0004f8e16de1cef6e513f4c4a3a81ca7" />
+    <None Include=".git\objects\72\dda234edaa4d2b0e9e2c5420d8685e920ec3e5" />
+    <None Include=".git\objects\75\0da4e19b9a8713ad898b0b015d9ada7db62348" />
+    <None Include=".git\objects\75\d817a3d3b5d447fbe9cc53f24a34398c7df0aa" />
+    <None Include=".git\objects\77\7af62ba279222cced9628ec3ea998f67a12eb0" />
+    <None Include=".git\objects\7a\016480be461d543b032eadd701edc6f9c9ebb6" />
+    <None Include=".git\objects\7b\563709902921cdf12abc8f751eaf290a052a3b" />
+    <None Include=".git\objects\7b\7ff066eb82203f876017850d617db18fcdd695" />
+    <None Include=".git\objects\7b\b20f2123d9324b6e80e545cd14237e579d5792" />
+    <None Include=".git\objects\7d\86eb1694970141b88b52f5b26e6b019f16b590" />
+    <None Include=".git\objects\80\f14b58c2e1a8ff2e2e79260953476be8795fcc" />
+    <None Include=".git\objects\85\e139f5b54deca115004ea5421dd4cb383cca28" />
+    <None Include=".git\objects\86\d302aa91468c4216bb5fa2b614db2a779820b8" />
+    <None Include=".git\objects\88\5e95343b9863e5898dd4eb072bd83831fea350" />
+    <None Include=".git\objects\89\7920889d0b6282493a4b8ef007e1c40a14cce4" />
+    <None Include=".git\objects\89\f6ee46d2b3233381bcc2eb5b205146673aae01" />
+    <None Include=".git\objects\8b\5cb0de1f1af8bcada6bd298a13127d658e8354" />
+    <None Include=".git\objects\8d\1977fb21745b27e49e2825eb9651903ad1c99d" />
+    <None Include=".git\objects\8d\c9f5926c9df52ea39738c5d5da562808a85c7c" />
+    <None Include=".git\objects\8e\11e7b8e80ef8112a7b60af7d463f485805989e" />
+    <None Include=".git\objects\8e\16f686d122e883364d71d550e5abcf9e71842c" />
+    <None Include=".git\objects\8f\9b37be3527a8e43f270d90dccfdcc2e7f888f5" />
+    <None Include=".git\objects\90\53c341364b451f102f9a30f10a79c0c53ef26c" />
+    <None Include=".git\objects\90\ec857c32d7dbda900f6ba2dccad3dd033b74a3" />
+    <None Include=".git\objects\91\55bd50d24f1ad9bd44d35c96b51503fea60778" />
+    <None Include=".git\objects\91\88ac8eb2676b1d53cd3b60d27a7bd88b2dfd79" />
+    <None Include=".git\objects\93\63998bcee9c61b7668d9b6e4d2e9a152e0ea80" />
+    <None Include=".git\objects\94\91a2fda28342ab358eaf234e1afe0c07a53d62" />
+    <None Include=".git\objects\95\1a4a826c0755509d4980c16cdb0e03de77c67f" />
+    <None Include=".git\objects\96\07af1cc3a93368c51c62b3c68f1860757aa2b1" />
+    <None Include=".git\objects\96\9ecb04bd84255dfc366604c23ba5540bf72048" />
+    <None Include=".git\objects\96\c0fd5b2517de7e58573378f510e8a5aad650c3" />
+    <None Include=".git\objects\97\1b34f729b805a5d9d8b2e1870800ce24eb66e4" />
+    <None Include=".git\objects\98\4713a49622a96da110443c15477613bc12656b" />
+    <None Include=".git\objects\9a\151694c333bc564324963ef1677467ce5a1b36" />
+    <None Include=".git\objects\9a\a29a2fde05730226ef82909f3bb65e771af4f8" />
+    <None Include=".git\objects\9a\e7fff93c9c47f7570faf41bfa7f08335afd16c" />
+    <None Include=".git\objects\9e\b2ed27fd87ac7610147a469bd104bb32c97887" />
+    <None Include=".git\objects\9f\768292f08c56264972983e20c30bbe1b50bb35" />
+    <None Include=".git\objects\a2\850a4b41fa0e02b3eb29e28ce333bd4d1e1c1b" />
+    <None Include=".git\objects\a5\9a60b893059f9b05b70d89519a3102f5be9bd9" />
+    <None Include=".git\objects\a5\f10045db97461e9565c3273fdb9252687aa4f1" />
+    <None Include=".git\objects\a6\cac8145439cab4d7259965b9769169a2e83997" />
+    <None Include=".git\objects\a7\d1582b84b84e93f973b850472c91587b6ed56c" />
+    <None Include=".git\objects\a8\d53068fa8bc1ceb69ad38c894fff74e60f2013" />
+    <None Include=".git\objects\a9\3ea35a8c675421036f171201baaec7d9e1a623" />
+    <None Include=".git\objects\ab\1666b04ff2d57f7ee682f78b6c3d5ce921ca17" />
+    <None Include=".git\objects\ad\e3b98a096cf8fab2de25a9d7c42f7338400116" />
+    <None Include=".git\objects\af\22731dcff3bdefd5f3810486f33dba7cc344f1" />
+    <None Include=".git\objects\af\4fb195a3c9183e1a1944162e20f06c8eccce89" />
+    <None Include=".git\objects\af\807b3b5270b1b2a558bb96dd6b14b98f9cd9a9" />
+    <None Include=".git\objects\af\cd9e33e9eae3876cdc0dfaafa5a80e012b1631" />
+    <None Include=".git\objects\b0\c7f594fd0a774b2cbe0288c1f50394b2a764bb" />
+    <None Include=".git\objects\b1\2d6ab1da5ed2cc408167fd184edeba99d507af" />
+    <None Include=".git\objects\b2\f73bccbaed0f4c3b9d8e2d9ebd06ecaeed3f8b" />
+    <None Include=".git\objects\b3\d48c18272b2908a1bf95e483f2b493a3a68139" />
+    <None Include=".git\objects\b3\e98c7685f7f671d818bc700504de1533634e62" />
+    <None Include=".git\objects\b6\5b161a5332cca8cdea77ed3320bcc99380f304" />
+    <None Include=".git\objects\b6\bcaac2d7c8bd496b7b4f370630ad7375d4483e" />
+    <None Include=".git\objects\b9\ab9867b46209de1f334f845964fd3abcd22711" />
+    <None Include=".git\objects\ba\2a526587b8a3979b1dc5e0e39286db6c63fe10" />
+    <None Include=".git\objects\ba\731e1cc914e390d864db1e58236b14c1e7a172" />
+    <None Include=".git\objects\bb\9ab28f06657945755614a4406b92f78080198d" />
+    <None Include=".git\objects\bc\fd79a52d9aa19fbc687ce3eb5023a66084412e" />
+    <None Include=".git\objects\bd\4f7e38838cd992a050d7ad436026e70646f156" />
+    <None Include=".git\objects\bd\b903aebcb8c7a4bb878f49b7adcae4e593e1cd" />
+    <None Include=".git\objects\bd\d53eb09922f9a30f018a9f81f9fe9fc6c8f2a9" />
+    <None Include=".git\objects\be\c4165281f0b520d1d3c3ae58f54d6bba160c33" />
+    <None Include=".git\objects\bf\22371e8a700eb5a433724127d3032e6bf89ca8" />
+    <None Include=".git\objects\c0\06d39bc083903f825511a385f657ef77021f28" />
+    <None Include=".git\objects\c0\6c13a042b74b99bc69a0f71552e34db61a71f4" />
+    <None Include=".git\objects\c1\87c02e050873568d42a01ececaac425560851b" />
+    <None Include=".git\objects\c1\bcf3b0402775977c983ce890be2bfb5ae72741" />
+    <None Include=".git\objects\c1\fa1ae7aa3a814575fe30fd8457c8f1f794fa75" />
+    <None Include=".git\objects\c3\1fb887f6b220423b22fc27f3e9547ffbb65408" />
+    <None Include=".git\objects\c4\22d35056499a2edadfda43866a0592279823f4" />
+    <None Include=".git\objects\c4\c6022f2982e8dae64cebd6b9a2b59f2547faad" />
+    <None Include=".git\objects\c4\f9e4fcc68b3d0b84e293b5832d1f685c1be58d" />
+    <None Include=".git\objects\c6\a7229185ab52a4fa89941727b0078d805b6fc0" />
+    <None Include=".git\objects\c9\0e1a30db0e8fb1320703429005b6c14f16e1b3" />
+    <None Include=".git\objects\ca\37afc02cf0bc247b14221e4fdbe373aedecc93" />
+    <None Include=".git\objects\ca\f9fe6ec1596a59607e115b1689b1b69fdc9a30" />
+    <None Include=".git\objects\cc\6683a96237f5e176dab5dc1c405b4db084a341" />
+    <None Include=".git\objects\cc\a02d205a1b62a5082e88a2fe493e0bbaf709a0" />
+    <None Include=".git\objects\cd\0442eb98af76d18c0f59dd480a5334e71a2b81" />
+    <None Include=".git\objects\cd\9758367c96b24a35d83ad65cffcebbeebed658" />
+    <None Include=".git\objects\cd\bb35f7e2170279479fd18f238aeae7ff00f89a" />
+    <None Include=".git\objects\ce\af3b0bd4b2757b54b9075aa7b76a5ac18abd01" />
+    <None Include=".git\objects\d3\4aa31b2c0f712e0248c2a2f9748fb97e982103" />
+    <None Include=".git\objects\d3\dfc1b670ccfe6c08c117927259e1f525ea930a" />
+    <None Include=".git\objects\d6\6bb58e5831944ef9fab7411b1ca15ec2e8f96d" />
+    <None Include=".git\objects\d8\5c7e58ccf784099c5e365d12d501dd12281ba9" />
+    <None Include=".git\objects\d8\d803c65e634d47d44b59d113b78f5bc12d29ff" />
+    <None Include=".git\objects\d9\68db23052b8d285a115ba9bada5ec05b584917" />
+    <None Include=".git\objects\d9\6fe10908b49ad5867150940bfd5abc9c960c1f" />
+    <None Include=".git\objects\d9\dd4891cb4bb7816dda00d8a86c1c5cff74049a" />
+    <None Include=".git\objects\da\65945f067dbac18d18d534dad758faa3f46756" />
+    <None Include=".git\objects\db\521015a4883bee87e8dc849fae7ec0d393442d" />
+    <None Include=".git\objects\dc\377cc031064ba146e9af3cb64155522ade5cfa" />
+    <None Include=".git\objects\dc\dd2873bb871974d4f0b8d84269eaa2df34fe80" />
+    <None Include=".git\objects\dd\8a407e30a6b5ec05b6c2c91373a3b8cda36d0f" />
+    <None Include=".git\objects\dd\8e5c787f197f8de92b4a3338904f72a462485a" />
+    <None Include=".git\objects\df\725c646965125da913ae43c01580df52239131" />
+    <None Include=".git\objects\df\d77bd99411b26fe6615bd89ba283a535ad9ba6" />
+    <None Include=".git\objects\df\f3dc468893f07e4f912461f9e7aa4c361e9b1b" />
+    <None Include=".git\objects\e1\bd892b06690d0e4536228562a0259cd73de96a" />
+    <None Include=".git\objects\e5\0d39132aa04e53e8328954c002d2e6f2e08215" />
+    <None Include=".git\objects\ea\c0d8b5ad9f9d7a1f8dddd0223f53db55a1226d" />
+    <None Include=".git\objects\eb\d1f8e6936dd885a6d02646de1499dff703a700" />
+    <None Include=".git\objects\ec\83e5ccd4bb3149167558af111af65a1cbedbc3" />
+    <None Include=".git\objects\ed\efdb1b84adb6e9afba0541e99915d707ca9722" />
+    <None Include=".git\objects\f1\19d9b8fd29a1bb92020522e4e8c8b40e9d5567" />
+    <None Include=".git\objects\f2\0350b9638dece6e206922135d20e69a9dc5512" />
+    <None Include=".git\objects\f3\50988d6175b7b3402ccb1b498d3f110f3a7529" />
+    <None Include=".git\objects\f5\b37514a92776b6e2085c73d6b0b202f705dddc" />
+    <None Include=".git\objects\f7\d069eec7ed7cbb30f07bfc10a15a90a41e0c1a" />
+    <None Include=".git\objects\f8\d98fcb771c217091024c272f87defa13ebbf34" />
+    <None Include=".git\objects\f8\e422f10fbc23c6942f20ed884e260cca93913f" />
+    <None Include=".git\objects\f9\a0dea30c33d5996d7291f44f446c3065a94a84" />
+    <None Include=".git\objects\fa\1b5996b1906c45fb92793f3edf67b47495d8db" />
+    <None Include=".git\objects\fa\71b7ae6a34999a3f96c40d9a0b870b311d11dd" />
+    <None Include=".git\objects\fa\be29a7240edf4740af15c9981204a26d9685c8" />
+    <None Include=".git\objects\fc\6c299b73e792ef288e785c22393a5df9dded4b" />
+    <None Include=".git\objects\fe\2fbb3f84c33103316916e0e1cbf62e24244460" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".vs\Practice5\config\applicationhost.config" />
+    <None Include=".vs\Practice5\DesignTimeBuild\.dtbcache.v2" />
+    <None Include=".vs\Practice5\FileContentIndex\06fd290c-cc37-4243-8114-3ac3938cdda7.vsidx" />
+    <None Include=".vs\Practice5\FileContentIndex\102705f2-75ba-46e2-bafa-cd7dd3cccec2.vsidx" />
+    <None Include=".vs\Practice5\FileContentIndex\6b006c19-51cb-4c06-8b59-63f59505424f.vsidx" />
+    <None Include=".vs\Practice5\FileContentIndex\6f005a50-4d07-4b76-88e9-9a15985d45c8.vsidx" />
+    <None Include=".vs\Practice5\FileContentIndex\a4155677-f39e-431c-9971-d74bded05a56.vsidx" />
+    <None Include=".vs\Practice5\v17\.futdcache.v2" />
+    <None Include=".vs\Practice5\v17\.suo" />
+    <None Include=".vs\Practice5\v17\DocumentLayout.json" />
+    <None Include=".vs\Practice6\FileContentIndex\84751a1b-ffca-4f51-999e-029d577e0537.vsidx" />
+    <None Include=".vs\Practice6\v17\TestStore\0\000.testlog" />
+    <None Include=".vs\Practice6\v17\TestStore\0\testlog.manifest" />
+    <None Include=".vs\ProjectEvaluation\practice5.metadata.v8.bin" />
+    <None Include=".vs\ProjectEvaluation\practice5.projects.v8.bin" />
+    <None Include=".vs\ProjectEvaluation\practice5.strings.v8.bin" />
+    <None Include="Practice5\obj\Debug\net8.0-windows\Practice5.AssemblyInfoInputs.cache" />
+    <None Include="Practice5\obj\Debug\net8.0-windows\Practice5.assets.cache" />
+    <None Include="Practice5\obj\Debug\net8.0-windows\Practice5.designer.deps.json" />
+    <None Include="Practice5\obj\Debug\net8.0-windows\Practice5.designer.runtimeconfig.json" />
+    <None Include="Practice5\obj\Debug\net8.0-windows\Practice5.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="Practice5\obj\Practice5.csproj.nuget.dgspec.json" />
+    <None Include="Practice5\obj\Practice5.csproj.nuget.g.props" />
+    <None Include="Practice5\obj\Practice5.csproj.nuget.g.targets" />
+    <None Include="Practice5\obj\project.assets.json" />
+    <None Include="Practice5\obj\project.nuget.cache" />
+    <None Include="Practice5\Practice5.csproj" />
+    <None Include="Practice5_DataAcess\bin\Debug\net8.0\Practice5_DataAccess.deps.json" />
+    <None Include="Practice5_DataAcess\bin\Debug\net8.0\Practice5_DataAccess.runtimeconfig.json" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice.ADD62A57.Up2Date" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.AssemblyInfoInputs.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.assets.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.csproj.AssemblyReference.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.csproj.BuildWithSkipAnalyzers" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.csproj.CoreCompileInputs.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.genruntimeconfig.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.sourcelink.json" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAcess.AssemblyInfoInputs.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAcess.assets.cache" />
+    <None Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAcess.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="Practice5_DataAcess\obj\Practice5_DataAccess.csproj.nuget.dgspec.json" />
+    <None Include="Practice5_DataAcess\obj\Practice5_DataAccess.csproj.nuget.g.props" />
+    <None Include="Practice5_DataAcess\obj\Practice5_DataAccess.csproj.nuget.g.targets" />
+    <None Include="Practice5_DataAcess\obj\Practice5_DataAcess.csproj.nuget.dgspec.json" />
+    <None Include="Practice5_DataAcess\obj\Practice5_DataAcess.csproj.nuget.g.props" />
+    <None Include="Practice5_DataAcess\obj\Practice5_DataAcess.csproj.nuget.g.targets" />
+    <None Include="Practice5_DataAcess\obj\project.assets.json" />
+    <None Include="Practice5_DataAcess\obj\project.nuget.cache" />
+    <None Include="Practice5_DataAcess\Practice5_DataAccess.csproj" />
+    <None Include="Practice5_Model\bin\Debug\net8.0\Practice5_Model.deps.json" />
+    <None Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.AssemblyInfoInputs.cache" />
+    <None Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.assets.cache" />
+    <None Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.csproj.BuildWithSkipAnalyzers" />
+    <None Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.csproj.CoreCompileInputs.cache" />
+    <None Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.sourcelink.json" />
+    <None Include="Practice5_Model\obj\Practice5_Model.csproj.nuget.dgspec.json" />
+    <None Include="Practice5_Model\obj\Practice5_Model.csproj.nuget.g.props" />
+    <None Include="Practice5_Model\obj\Practice5_Model.csproj.nuget.g.targets" />
+    <None Include="Practice5_Model\obj\project.assets.json" />
+    <None Include="Practice5_Model\obj\project.nuget.cache" />
+    <None Include="Practice5_Model\Practice5_Model.csproj" />
+    <None Include="Practice5_WebApp\appsettings.Development.json" />
+    <None Include="Practice5_WebApp\appsettings.json" />
+    <None Include="Practice5_WebApp\bin\Debug\net8.0\appsettings.Development.json" />
+    <None Include="Practice5_WebApp\bin\Debug\net8.0\appsettings.json" />
+    <None Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_WebApp.deps.json" />
+    <None Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_WebApp.runtimeconfig.json" />
+    <None Include="Practice5_WebApp\bin\Debug\net8.0\Practice5_WebApp.staticwebassets.runtime.json" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice.9E54BB97.Up2Date" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.AssemblyInfoInputs.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.assets.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.csproj.AssemblyReference.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.csproj.BuildWithSkipAnalyzers" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.csproj.CoreCompileInputs.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.genruntimeconfig.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.RazorAssemblyInfo.cache" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.sourcelink.json" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\project.razor.vs.bin" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets.build.json" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets.development.json" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets.pack.json" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.Practice5_WebApp.props" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Practice5_WebApp.props" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Practice5_WebApp.props" />
+    <None Include="Practice5_WebApp\obj\Debug\net8.0\staticwebassets\msbuild.Practice5_WebApp.Microsoft.AspNetCore.StaticWebAssets.props" />
+    <None Include="Practice5_WebApp\obj\Practice5_WebApp.csproj.nuget.dgspec.json" />
+    <None Include="Practice5_WebApp\obj\Practice5_WebApp.csproj.nuget.g.props" />
+    <None Include="Practice5_WebApp\obj\Practice5_WebApp.csproj.nuget.g.targets" />
+    <None Include="Practice5_WebApp\obj\project.assets.json" />
+    <None Include="Practice5_WebApp\obj\project.nuget.cache" />
+    <None Include="Practice5_WebApp\Practice5_WebApp.csproj" />
+    <None Include="Practice5_WebApp\Properties\launchSettings.json" />
+    <None Include="Practice5_WebApp\Views\Home\Index.cshtml" />
+    <None Include="Practice5_WebApp\Views\Home\Privacy.cshtml" />
+    <None Include="Practice5_WebApp\Views\Inventory\Index.cshtml" />
+    <None Include="Practice5_WebApp\Views\Inventory\Upsert.cshtml" />
+    <None Include="Practice5_WebApp\Views\Product\Index.cshtml" />
+    <None Include="Practice5_WebApp\Views\Product\Upsert.cshtml" />
+    <None Include="Practice5_WebApp\Views\Purchase\Index.cshtml" />
+    <None Include="Practice5_WebApp\Views\Purchase\Upsert.cshtml" />
+    <None Include="Practice5_WebApp\Views\Sale\SaleIndex.cshtml" />
+    <None Include="Practice5_WebApp\Views\Sale\Upsert.cshtml" />
+    <None Include="Practice5_WebApp\Views\Shared\Error.cshtml" />
+    <None Include="Practice5_WebApp\Views\Shared\_Layout.cshtml" />
+    <None Include="Practice5_WebApp\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Practice5_WebApp\Views\_ViewImports.cshtml" />
+    <None Include="Practice5_WebApp\Views\_ViewStart.cshtml" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="Practice5_WebApp\wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="Practice5_WebApp\wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="Practice5_WebApp\wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Practice5\Form1.cs" />
+    <Compile Include="Practice5\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5\obj\Debug\net8.0-windows\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="Practice5\obj\Debug\net8.0-windows\Practice5.AssemblyInfo.cs" />
+    <Compile Include="Practice5\obj\Debug\net8.0-windows\Practice5.GlobalUsings.g.cs" />
+    <Compile Include="Practice5\Program.cs" />
+    <Compile Include="Practice5_DataAcess\Data\ApplicationDbContext.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240918192547_DbSetUp.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240918192547_DbSetUp.Designer.cs">
+      <DependentUpon>20240918192547_DbSetUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240918192629_DbSetupName.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240918192629_DbSetupName.Designer.cs">
+      <DependentUpon>20240918192629_DbSetupName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919180539_InitialDB.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919180539_InitialDB.Designer.cs">
+      <DependentUpon>20240919180539_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919180647_insertInventory.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919180647_insertInventory.Designer.cs">
+      <DependentUpon>20240919180647_insertInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919181856_insertInventoryData.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919181856_insertInventoryData.Designer.cs">
+      <DependentUpon>20240919181856_insertInventoryData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919182632_insertInventoryDataFix.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919182632_insertInventoryDataFix.Designer.cs">
+      <DependentUpon>20240919182632_insertInventoryDataFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919182821_FixInsertInventory.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919182821_FixInsertInventory.Designer.cs">
+      <DependentUpon>20240919182821_FixInsertInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919184950_FixDataInventory.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919184950_FixDataInventory.Designer.cs">
+      <DependentUpon>20240919184950_FixDataInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919185745_FixDataInventory2.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919185745_FixDataInventory2.Designer.cs">
+      <DependentUpon>20240919185745_FixDataInventory2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919191423_DataInsertInventory.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919191423_DataInsertInventory.Designer.cs">
+      <DependentUpon>20240919191423_DataInsertInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919193921_DataInsertInventory1.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919193921_DataInsertInventory1.Designer.cs">
+      <DependentUpon>20240919193921_DataInsertInventory1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919194206_DataInsertInventory3.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919194206_DataInsertInventory3.Designer.cs">
+      <DependentUpon>20240919194206_DataInsertInventory3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\20240919195035_DataInsertInventory1.1.cs" />
+    <Compile Include="Practice5_DataAcess\Migrations\20240919195035_DataInsertInventory1.1.Designer.cs">
+      <DependentUpon>20240919195035_DataInsertInventory1.1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Practice5_DataAcess\Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <Compile Include="Practice5_DataAcess\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.AssemblyInfo.cs" />
+    <Compile Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAccess.GlobalUsings.g.cs" />
+    <Compile Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAcess.AssemblyInfo.cs" />
+    <Compile Include="Practice5_DataAcess\obj\Debug\net8.0\Practice5_DataAcess.GlobalUsings.g.cs" />
+    <Compile Include="Practice5_Model\Models\ErrorViewModel.cs" />
+    <Compile Include="Practice5_Model\Models\Inventory.cs" />
+    <Compile Include="Practice5_Model\Models\Product.cs" />
+    <Compile Include="Practice5_Model\Models\Purchase.cs" />
+    <Compile Include="Practice5_Model\Models\Sale.cs" />
+    <Compile Include="Practice5_Model\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.AssemblyInfo.cs" />
+    <Compile Include="Practice5_Model\obj\Debug\net8.0\Practice5_Model.GlobalUsings.g.cs" />
+    <Compile Include="Practice5_WebApp\Controllers\HomeController.cs" />
+    <Compile Include="Practice5_WebApp\Controllers\InventoryController.cs" />
+    <Compile Include="Practice5_WebApp\Controllers\ProductController.cs" />
+    <Compile Include="Practice5_WebApp\Controllers\PurchaseController.cs" />
+    <Compile Include="Practice5_WebApp\Controllers\SaleController.cs" />
+    <Compile Include="Practice5_WebApp\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.AssemblyInfo.cs" />
+    <Compile Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.GlobalUsings.g.cs" />
+    <Compile Include="Practice5_WebApp\obj\Debug\net8.0\Practice5_WebApp.RazorAssemblyInfo.cs" />
+    <Compile Include="Practice5_WebApp\Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Practice5\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".github\workflows\" />
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include="Practice5\bin\Debug\net8.0-windows\" />
+    <Folder Include="Practice5\obj\Debug\net8.0-windows\refint\" />
+    <Folder Include="Practice5\obj\Debug\net8.0-windows\ref\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
